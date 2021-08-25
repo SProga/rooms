@@ -1,0 +1,48 @@
+.carousel {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 80rem;
+
+	&__track {
+		position: relative;
+		height: 100%;
+		position: relative;
+		transition: transform 250ms ease-in;
+		list-style: none;
+	}
+	&__track-container {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	}
+	&__slide {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		&-content {
+			padding: 5rem 0;
+			width: 90%;
+			margin: 0 auto;
+			text-align: left;
+		}
+
+		&-img {
+			display: block;
+			width: 100%;
+			height: 50%;
+			-o-object-fit: cover;
+			object-fit: cover;
+		}
+		&-title {
+			font-size: 3.2rem;
+		}
+		&-text {
+			padding-top: 2rem;
+			font-size: 1.5rem;
+			line-height: 1.7;
+			color: var(--dark-gray);
+		}
+	}
+}
