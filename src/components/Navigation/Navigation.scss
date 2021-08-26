@@ -1,3 +1,5 @@
+@import "../../../public/sass/main.scss";
+
 .nav {
 	position: absolute;
 	z-index: 99999;
@@ -6,13 +8,34 @@
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	height: 15vh;
+	width: 100%;
 
 	&__btn {
 		background: transparent;
 		border: none;
 		margin: 0 3rem;
+		@include respond(laptop) {
+			display: none;
+		}
 	}
 	&__logo {
 		margin-left: 10rem;
+	}
+	&__collapsible {
+		display: none;
+		@include respond(laptop) {
+			display: flex;
+			margin-left: 5rem;
+			width: 20%;
+			justify-content: space-evenly;
+			& > a {
+				color: var(--white);
+				text-decoration: none;
+				font-size: 1.2rem;
+				&:hover {
+					border-bottom: 1px solid var(--white);
+				}
+			}
+		}
 	}
 }

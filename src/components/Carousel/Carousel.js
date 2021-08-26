@@ -1,15 +1,14 @@
 import "./Carousel.scss";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import CarouselData from "./CarouselData";
 import Slide from "./Slide";
 import NavigationArrow from "../NavigationArrow/NavigationArrow";
 
-const Carousel = (props) => {
+const Carousel = React.memo((props) => {
 	const track = useRef();
-
 	const [active, setActive] = useState(0);
 
-	const previousSlideHandler = (curr) => {
+	const previousSlideHandler = (curr, track) => {
 		if (curr > 0) {
 			const slide = Array.from(track.current.children);
 			track.current.style.transform = `translateX(-${
@@ -18,7 +17,7 @@ const Carousel = (props) => {
 			setActive(curr - 1);
 		}
 	};
-	const nextSlideHandler = (curr) => {
+	const nextSlideHandler = (curr, track) => {
 		if (curr < track.current.children.length - 1) {
 			const slide = Array.from(track.current.children);
 			track.current.style.transform = `translateX(-${
@@ -46,13 +45,13 @@ const Carousel = (props) => {
 				<ul className="carousel__track" ref={track}>
 					{Slides}
 				</ul>
+				<NavigationArrow
+					previousSlideHandler={previousSlideHandler.bind(null, active, track)}
+					nextSlideHandler={nextSlideHandler.bind(null, active, track)}
+				/>
 			</div>
-			<NavigationArrow
-				previousSlideHandler={previousSlideHandler.bind(null, active)}
-				nextSlideHandler={nextSlideHandler.bind(null, active)}
-			/>
 		</div>
 	);
-};
+});
 
 export default Carousel;

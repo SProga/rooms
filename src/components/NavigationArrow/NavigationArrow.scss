@@ -1,20 +1,30 @@
+@import "../../../public/sass/main.scss";
+
 .navigationArrow {
-	position: absolute;
-	bottom: 50%;
-	right: 0;
 	display: flex;
-	height: 7rem;
-	width: 30%;
-	min-width: 100px;
-	background-color: var(--black);
-	justify-content: space-between;
-	padding: 0 2rem;
-	align-items: center;
-	z-index: 99999999;
+	position: absolute;
+	right: 0;
+	bottom: calc(100% - var(--carousel-image-height));
+	@include respond(laptop) {
+		left: var(--carousel-image-width);
+		max-width: 14rem;
+	}
 	&__btn {
+		display: flex;
 		display: inline-block;
-		background: transparent;
 		cursor: pointer;
 		border: none;
+		height: 7rem;
+		width: 30%;
+		min-width: 100px;
+		background-color: var(--black);
+		justify-content: space-between;
+		padding: 0 2rem;
+		align-items: center;
+		z-index: 99999999;
+		cursor: pointer;
+		&:hover {
+			background: var(--very-dark-gray);
+		}
 	}
 }

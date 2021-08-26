@@ -17,6 +17,20 @@ const Navigation = (props) => {
 			<a href="/" className="nav__logo">
 				<img src={Logo} alt="room Logo" />
 			</a>
+			<div className="nav__collapsible">
+				<a href="/" className="nav__link">
+					home
+				</a>
+				<a href="/" className="nav__link">
+					shop
+				</a>
+				<a href="/" className="nav__link">
+					about
+				</a>
+				<a href="/" className="nav__link">
+					contact
+				</a>
+			</div>
 		</nav>
 	);
 };

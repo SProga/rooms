@@ -1,0 +1,75 @@
+@import "../../../public/sass/main.scss";
+
+.about {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	min-height: 70rem;
+	margin-top: 4rem;
+	max-width: 144rem;
+	margin: 0 auto;
+	@include respond(laptop) {
+		margin-top: initial;
+		flex-direction: row;
+		min-height: initial;
+	}
+
+	&-left {
+		width: 100%;
+		&-wrapper {
+			width: 100%;
+			&-img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				-o-object-fit: cover;
+				object-fit: cover;
+			}
+		}
+	}
+	&-center {
+		padding: 4rem 0;
+		width: 90%;
+		margin: 0 auto;
+		text-align: left;
+
+		@include respond(laptop) {
+			padding: 6rem 5rem;
+			flex: 0 0 42%;
+			width: initial;
+		}
+
+		& > h2 {
+			font-size: 2rem;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			font-weight: 700;
+			@include respond(laptop) {
+				font-size: 1.3rem;
+			}
+		}
+		& > p {
+			margin-top: 1rem;
+			font-size: 1.5rem;
+			line-height: 1.7;
+			color: var(--dark-gray);
+			@include respond(laptop) {
+				font-size: 1.2rem;
+				line-height: 1.9;
+			}
+		}
+	}
+	&-right {
+		width: 100%;
+		&-wrapper {
+			width: 100%;
+			&-img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				-o-object-fit: cover;
+				object-fit: cover;
+			}
+		}
+	}
+}
