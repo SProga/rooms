@@ -5,11 +5,18 @@
 	display: flex;
 	flex-direction: column;
 	height: 80rem;
+	padding-bottom: 4rem;
 	overflow: hidden;
-	@include respond(laptop) {
+	@include respond(tab-port) {
 		align-self: center;
 		text-align: left;
-		height: 60rem;
+		padding-bottom: 20rem;
+	}
+	@include respond(tab-land) {
+		align-self: center;
+		text-align: left;
+		max-height: 60rem;
+		padding-bottom: 0;
 	}
 
 	&__track {
@@ -17,7 +24,7 @@
 		height: 100%;
 		transition: transform 250ms ease-in;
 		list-style: none;
-		@include respond(laptop) {
+		@include respond(tab-land) {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
@@ -34,7 +41,7 @@
 		top: 0;
 		bottom: 0;
 		min-width: 100%;
-		@include respond(laptop) {
+		@include respond(tab-land) {
 			display: flex;
 			flex-direction: row;
 		}
@@ -43,6 +50,12 @@
 			width: 90%;
 			margin: 0 auto;
 			text-align: left;
+			@include respond(tab-land) {
+				width: 100%;
+				padding: 0 4rem;
+				align-self: center;
+				text-align: left;
+			}
 			@include respond(laptop) {
 				width: 100%;
 				padding: 0 22rem 0 8rem;
@@ -65,7 +78,7 @@
 				object-fit: cover;
 				height: var(--carousel-image-height);
 			}
-			@include respond(laptop) {
+			@include respond(tab-land) {
 				width: var(--carousel-image-width);
 			}
 		}
@@ -77,7 +90,7 @@
 			font-size: 1.5rem;
 			line-height: 1.7;
 			color: var(--dark-gray);
-			@include respond(laptop) {
+			@include respond(tab-land) {
 				font-size: 1.2rem;
 				line-height: 1.9;
 			}

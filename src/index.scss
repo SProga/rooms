@@ -10,7 +10,7 @@
 	@include respond(tab-port) {
 		--carousel-image-height: 70%;
 	}
-	@include respond(laptop) {
+	@include respond(tab-land) {
 		--carousel-image-height: 100%;
 		--carousel-image-width: 50%;
 	}

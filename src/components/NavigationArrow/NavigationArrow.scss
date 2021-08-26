@@ -5,7 +5,7 @@
 	position: absolute;
 	right: 0;
 	bottom: calc(100% - var(--carousel-image-height));
-	@include respond(laptop) {
+	@include respond(tab-land) {
 		left: var(--carousel-image-width);
 		max-width: 14rem;
 	}

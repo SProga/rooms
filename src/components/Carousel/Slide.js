@@ -1,18 +1,21 @@
 import "./Carousel.scss";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Arrow from "../../images/icon-arrow.svg";
 
 const Slide = (props) => {
+	const [distance, setDistance] = useState(0);
 	const slideRef = useRef();
 	const index = props.index || 0;
 
 	useEffect(() => {
 		const slideWidth = slideRef.current.getBoundingClientRect().width;
+		setDistance(slideRef.current.getBoundingClientRect().left);
 		const setSlidePosition = (slide, index) => {
 			slide.style.left = index * slideWidth + "px";
 		};
 		setSlidePosition(slideRef.current, index);
-	}, [index]);
+	}, [index, distance]);
+
 	console.log("re-rendering");
 
 	return (
